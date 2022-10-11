@@ -13,7 +13,7 @@ jobs:
       uses: actions/cache@v3
       with:
         path: README.md
-        key: key-test
+        key: key123
 
     - run: echo ${{ steps.cache.outputs.cache-hit }}
     
