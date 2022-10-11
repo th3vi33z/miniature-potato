@@ -1,14 +1,12 @@
 name: Caching
 
-on: push
+on: [push , workflow_dispatch]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-
     - name: Cache
       id: cache
       uses: actions/cache@v3
@@ -17,3 +15,5 @@ jobs:
         key: key123
 
     - run: echo ${{ steps.cache.outputs.cache-hit }}
+    - run: cat README.md
+    
